@@ -9,14 +9,15 @@ import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
+import com.cleartrip.utils.Constant;
 import com.cleartrip.utils.utils;
 
 public class FlightListPage {
-	final static String xpathBookBtn =".//*[@id='flightForm']//*[@class='resultsContainer']/div[3]/div[3]//*[@class='booking fRight']";
-	@FindBy(how = How.XPATH, using =".//*[@id='flightForm']//*[@class='resultsContainer']/div[4]/div[1]/nav/ul/li[1]/div") WebElement fromPrice;
-	@FindBy(how = How.XPATH, using =".//*[@id='flightForm']//*[@class='resultsContainer']/div[4]/div[2]/nav/ul/li[1]/div") WebElement toPrice;
-	@FindBy(how = How.XPATH, using =".//h2[@class='totalAmount']") WebElement totalAmt;
-	@FindAll({@FindBy(how = How.XPATH, using = xpathBookBtn)}) List<WebElement> listBookBtn;
+	
+	@FindBy(how = How.XPATH, using = Constant.xpathFromPrice) WebElement fromPrice;
+	@FindBy(how = How.XPATH, using = Constant.xpathToPrice) WebElement toPrice;
+	@FindBy(how = How.XPATH, using = Constant.xpathTotalAmt) WebElement totalAmt;
+	@FindAll({@FindBy(how = How.XPATH, using = Constant.xpathListBookBtn)}) List<WebElement> listBookBtn;
 	
 	public boolean isPageLoaded(WebDriver driver){
 		return utils.isPageReady(driver, totalAmt);
