@@ -6,11 +6,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.cleartrip.utils.Constant;
 import com.cleartrip.utils.utils;
 
 public class ItineraryPage {
-	@FindBy(how = How.ID, using ="itineraryBtn") WebElement continueBookingBtn;
-	@FindBy(how = How.ID, using ="insurance_box") WebElement insuranceChkBox;
+	@FindBy(how = How.ID, using = Constant.idContinueBookingBtn) WebElement continueBookingBtn;
+	@FindBy(how = How.ID, using = Constant.idInsuranceChkBox) WebElement insuranceChkBox;
 	
 	public boolean isPageLoaded(WebDriver driver){
 		return utils.isPageReady(driver, continueBookingBtn);

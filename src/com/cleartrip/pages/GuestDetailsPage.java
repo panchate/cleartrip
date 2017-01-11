@@ -6,14 +6,15 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.Select;
 
+import com.cleartrip.utils.Constant;
 import com.cleartrip.utils.utils;
 
 public class GuestDetailsPage {
-	@FindBy(how = How.ID, using = "AdultTitle1") WebElement titleTraveller;
-	@FindBy(how = How.ID, using = "AdultFname1") WebElement firstName;
-	@FindBy(how = How.ID, using = "AdultLname1") WebElement lastName;
-	@FindBy(how = How.ID, using = "mobileNumber") WebElement mobileNumber;
-	@FindBy(how = How.ID, using = "travellerBtn") WebElement continueBtnTraveller;
+	@FindBy(how = How.ID, using = Constant.idTitleTraveller) WebElement titleTraveller;
+	@FindBy(how = How.ID, using = Constant.idFirstName) WebElement firstName;
+	@FindBy(how = How.ID, using = Constant.idLastName) WebElement lastName;
+	@FindBy(how = How.ID, using = Constant.idMobileNumber) WebElement mobileNumber;
+	@FindBy(how = How.ID, using = Constant.idcontinueBtnTraveller) WebElement continueBtnTraveller;
 	
 	public boolean isPageReady(WebDriver driver){
 		return utils.isPageReady(driver, continueBtnTraveller);

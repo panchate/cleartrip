@@ -1,9 +1,7 @@
 package com.cleartrip.pages;
 
-import java.util.HashMap;
 import java.util.List;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
@@ -11,24 +9,23 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.Select;
 
+import com.cleartrip.utils.Constant;
 import com.cleartrip.utils.utils;
-import com.gargoylesoftware.htmlunit.javascript.host.media.webkitAudioContext;
-
 
 public class HomePage {
 
-	@FindBy(how=How.ID, using = "RoundTrip") WebElement roundTrip;
-	@FindBy(how=How.ID, using = "FromTag") WebElement from;
-	@FindBy(how=How.ID, using ="ToTag") WebElement to;
-	@FindBy(how=How.ID, using ="DepartDate") WebElement departDate;
-	@FindBy(how=How.ID, using ="RetrunDate") WebElement returnDate;
-	@FindBy(how=How.XPATH, using = ".//*[@id='SearchForm']/h1") WebElement searchForm;
-	@FindBy(how=How.ID, using = "Adults") WebElement adults;
-	@FindBy(how=How.ID, using ="SearchBtn") WebElement searchBtn;
-	@FindAll({@FindBy(how=How.XPATH, using = ".//*[@id='ui-id-1']//*[@class='list']/a")}) List<WebElement> listCities;
-	@FindBy(how=How.XPATH, using = ".//*[@id='ui-datepicker-div']//*[@class='monthBlock first']//*[@class='ui-datepicker-month']") WebElement month1;
-	@FindBy(how=How.XPATH, using = ".//*[@id='ui-datepicker-div']/div[2]/div/a") WebElement nextMonth;
-	@FindAll({@FindBy(how=How.XPATH, using =".//*[@id='ui-datepicker-div']//*[@class='monthBlock first']//table//tbody//td")}) List<WebElement> dates;
+	@FindBy(how=How.ID, using = Constant.idRoundTrip) WebElement roundTrip;
+	@FindBy(how=How.ID, using = Constant.idFromTag) WebElement from;
+	@FindBy(how=How.ID, using = Constant.idToTag) WebElement to;
+	@FindBy(how=How.ID, using = Constant.idDepartDate) WebElement departDate;
+	@FindBy(how=How.ID, using = Constant.idRetrunDate) WebElement returnDate;
+	@FindBy(how=How.XPATH, using = Constant.xpathSearchForm) WebElement searchForm;
+	@FindBy(how=How.ID, using = Constant.idAdults) WebElement adults;
+	@FindBy(how=How.ID, using = Constant.idSearchBtn) WebElement searchBtn;
+	@FindAll({@FindBy(how=How.XPATH, using = Constant.xpathListCities)}) List<WebElement> listCities;
+	@FindBy(how=How.XPATH, using = Constant.xpathMonth1) WebElement month1;
+	@FindBy(how=How.XPATH, using = Constant.xpathMonth1) WebElement nextMonth;
+	@FindAll({@FindBy(how=How.XPATH, using = Constant.xpathDates)}) List<WebElement> dates;
 
 	public String getSearchFrom(){
 		searchForm.click();
